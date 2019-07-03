@@ -158,7 +158,7 @@ exports.uploadImage= (req,res) => {
         
         admin
             .storage()
-            .bucket(`${config.storageBucket}`)
+            .bucket(config.storageBucket)
             .upload(imageToBeUploaded.filepath, {
                 resumable : false,
                 metadata : {
