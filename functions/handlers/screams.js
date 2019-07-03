@@ -137,7 +137,7 @@ exports.likeScream = (req,res) => {
                     return screamDocument.update({likeCount : screamData.likeCount});
                 })
                 .then(() => {
-                    return res.json({screamData});
+                    return res.json(screamData);
                 })
             } else {
                 return res.status(400).json({error : 'Scream already liked'});
