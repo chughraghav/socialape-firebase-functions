@@ -2,6 +2,9 @@ const functions = require('firebase-functions');
 const express = require('express');
 const FBAuth = require('./util/fbAuth');
 
+const cors = require('cors');
+
+
 const { db } = require('./util/admin');
 const {
     getAllScreams, 
@@ -25,6 +28,7 @@ const {
 
 
 const app = express();
+app.use(cors());
 
 // Scream Routes
 app.get('/screams',getAllScreams );
